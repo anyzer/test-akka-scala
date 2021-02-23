@@ -1,0 +1,34 @@
+*.class
+*.log
+.DS_Store
+dumped-file-s3/*
+data/*
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+# Intelli-J
+.idea
+# metals
+.bloop
+.metals
+
+# ensime
+.ensime
+.ensime/
+.ensime_cache/
+.ensime-langserver.log
+/job-deps
+/*.keytab
