@@ -1,25 +1,29 @@
 package com.example
 
+import com.example.app.ListNode
 import org.scalatest.FunSuite
+import scala.collection.immutable.WrappedString
+import scala.runtime.Tuple2Zipped
 
 class GeneralTest extends FunSuite {
 
   test("test array get") {
-    val test: Array[Int] = Array(1, 3, 3)
+    val na_3 = new ListNode(3)
+    val na_2 = new ListNode(2, na_3)
+    val na_1 = new ListNode(1, na_2)
 
-    val beforeMap: Array[(Int, Int)] = test.zipWithIndex
-    println("test zipWithIndex: " + test.zipWithIndex)
+    val nb_3 = new ListNode(3)
+    val nb_2 = new ListNode(2, nb_3)
+    val nb_1 = new ListNode(1, nb_2)
 
-    val te: Map[Int, Int] = test.zipWithIndex.toMap
-    println(s"${te}")
+    val str = "kkkk"
+    val temp = str.inits.flatMap { x =>
+      x.tails.toList.init.map(_.toCharArray.sorted.mkString)
+    }.toList.groupBy(identity).map { x => x._2.size
+    }.map { x => List.range(0, x).foldLeft(0)(_ + _)
+    }.foldLeft(0)(_ + _)
 
-    val getIndex: Option[Int] = te.get(3)
-    println(getIndex)
-
-    val test_map = Map[Int, Int]((10, 20), (20, 30), (30, 40))
-    println(test_map)
-    println(test_map.drop(2))
-
+    println("Result: " + temp)
   }
 
 }

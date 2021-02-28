@@ -27,15 +27,15 @@ object SolutionTwoSum {
       }
   }
 
-    def twoSum_2(arr: Array[Long], sum: Long): Array[Int] = {
-      val tmp = arr.zipWithIndex
-      val r: Array[(Int, Int)] = for {
-        t1 <- tmp
-        t2 <- tmp if t1._2 != t2._2 && (t1._1 + t2._1 == sum)
-      } yield (t1._2, t2._2)
+  def twoSum_2(arr: Array[Long], sum: Long): Array[Int] = {
+    val tmp = arr.zipWithIndex
+    val r: Array[(Int, Int)] = for {
+      t1 <- tmp
+      t2 <- tmp if t1._2 != t2._2 && (t1._1 + t2._1 == sum)
+    } yield (t1._2, t2._2)
 
-      r.flatMap(x => Array(x._1, x._2))
-    }
+    r.flatMap(x => Array(x._1, x._2))
+  }
 
 }
 
