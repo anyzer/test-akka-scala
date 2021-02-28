@@ -6,6 +6,14 @@ import scala.collection.immutable
 
 object Anagrams {
 
+  def sherlockAndAnagrams(s: String): Int = {
+    s.inits.flatMap { x =>
+      x.tails.toList.init.map(_.toCharArray.sorted.mkString)
+    }.toList.groupBy(identity).map { x => x._2.size
+    }.map { x => List.range(0, x).foldLeft(0)(_ + _)
+    }.foldLeft(0)(_ + _)
+  }
+
   def sherlockAndAnagrams_1(s: String): Int = {
     println("s: " + s)
 
@@ -48,14 +56,6 @@ object Anagrams {
     println("temp3: " + temp3)
 
     temp3
-  }
-
-  def sherlockAndAnagrams(s: String): Int = {
-    s.inits.flatMap { x =>
-      x.tails.toList.init.map(_.toCharArray.sorted.mkString)
-    }.toList.groupBy(identity).map { x => x._2.size
-    }.map { x => List.range(0, x).foldLeft(0)(_ + _)
-    }.foldLeft(0)(_ + _)
   }
 
 }
