@@ -9,16 +9,13 @@ object LeetCodeApp {
 
   def main(args: Array[String]): Unit = {
     println("==================== anagrams https://www.hackerrank.com/challenges/sherlock-and-anagrams/problem  ==============================")
-    val stdin = scala.io.StdIn
-    val printWriter = new PrintWriter("/Users/guoch/ttt.txt")
-    val q = stdin.readLine.trim.toInt
+    println("abba => 4, abcd => 0, ifailuhkqq => 3, kkkk => 10, cdcd => 5")
 
-    for (qItr <- 1 to q) {
-      val s = stdin.readLine
-      val result = Anagrams.sherlockAndAnagrams(s)
-      printWriter.println("main: " + result)
-    }
-    printWriter.close()
+    println(s"<abba> has result: ${Anagrams.sherlockAndAnagrams("abba")}")
+    println(s"<abcd> has result: ${Anagrams.sherlockAndAnagrams("abcd")}")
+    println(s"<ifailuhkqq> has result: ${Anagrams.sherlockAndAnagrams("ifailuhkqq")}")
+    println(s"<kkkk> has result: ${Anagrams.sherlockAndAnagrams("kkkk")}")
+    println(s"<cdcd> has result: ${Anagrams.sherlockAndAnagrams("cdcd")}")
 
 
     println("==================== two sum ==============================")
