@@ -8,10 +8,10 @@ object Anagrams {
 
   def sherlockAndAnagrams(s: String): Int = {
     s.inits.flatMap { x =>
-      x.tails.toList.init.map(_.toCharArray.sorted.mkString)
-    }.toList.groupBy(identity).map { x => x._2.size
-    }.map { x => List.range(0, x).foldLeft(0)(_ + _)
-    }.foldLeft(0)(_ + _)
+      x.tails.toList.init.map(_.toCharArray.sorted.mkString) //find all substring, and sort each substring
+    }.toList.groupBy(identity).map { x => x._2.size  //get number of same substrings
+    }.map { x => List.range(0, x).foldLeft(0)(_ + _) //if there are 3 same substring, then we will have 3 possible combinations
+    }.foldLeft(0)(_ + _) // sum
   }
 
   def sherlockAndAnagrams_1(s: String): Int = {
