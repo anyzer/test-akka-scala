@@ -1,6 +1,6 @@
 package com.example.app
 
-import com.example.app.twoSum.Solution
+import com.example.app.twoSum.SolutionTwoSum
 
 object LeetCodeApp {
 
@@ -10,9 +10,9 @@ object LeetCodeApp {
     val nums = Array[Int](10, 7, 2, 4, 5, 11, 15)
     val sum = 9
     println("two sum -  https://leetcode.com/problems/two-sum/")
-    val result = Solution.twoSum(nums, sum)
+    val result = SolutionTwoSum.twoSum(nums, sum)
     result.map(println)
-    val result_1 = Solution.twoSum_1(nums, sum)
+    val result_1 = SolutionTwoSum.twoSum_1(nums, sum)
     result_1.map(println)
 
   }
