@@ -27,6 +27,7 @@ object LeetCodeApp {
     val result_1 = SolutionTwoSum.twoSum_1(nums, sum)
     result_1.map(println)
 
+    ()
   }
 
 }
