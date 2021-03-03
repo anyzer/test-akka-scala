@@ -16,14 +16,7 @@ class GeneralTest extends FunSuite {
     val nb_2 = new ListNode(2, nb_3)
     val nb_1 = new ListNode(1, nb_2)
 
-    val str = "kkkk"
-    val temp = str.inits.flatMap { x =>
-      x.tails.toList.init.map(_.toCharArray.sorted.mkString)
-    }.toList.groupBy(identity).map { x => x._2.size
-    }.map { x => List.range(0, x).foldLeft(0)(_ + _)
-    }.foldLeft(0)(_ + _)
 
-    println("Result: " + temp)
   }
 
 }
