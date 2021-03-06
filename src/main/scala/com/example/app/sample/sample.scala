@@ -1,8 +1,8 @@
-package com.example.app.addTwoNumbers
+package com.example.app.sample
 
 import com.example.app.ListNode
 
-object SolutionAddTwoNumbers {
+object sample {
 
   def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
 
