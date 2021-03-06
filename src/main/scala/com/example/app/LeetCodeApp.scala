@@ -8,6 +8,14 @@ import com.example.app.twoSum.SolutionTwoSum
 object LeetCodeApp {
 
   def main(args: Array[String]): Unit = {
+    println("==================== Diagonal Difference ==============================")
+    val a = Array[Int](11, 2, 4)
+    val b = Array[Int](4, 5, 6)
+    val c = Array[Int](10, 8, -12)
+    val m = Array[Array[Int]](a, b, c)
+    diagonalDifference.diagonaliDiff.solution(m)
+
+
     println("==================== https://www.hackerrank.com/challenges/solve-me-first/problem ==============================")
     val array = Array[Int](1, 2, 3)
     println(s"Sum = ${array.toList.sum}")
