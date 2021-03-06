@@ -1,7 +1,6 @@
 package com.example.app.anagrams
 
 import com.example.app.ListNode
-
 import scala.collection.immutable
 
 object Anagrams {

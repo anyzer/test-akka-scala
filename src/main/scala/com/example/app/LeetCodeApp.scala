@@ -8,6 +8,32 @@ import com.example.app.twoSum.SolutionTwoSum
 object LeetCodeApp {
 
   def main(args: Array[String]): Unit = {
+    println("==================== https://www.hackerrank.com/challenges/solve-me-first/problem ==============================")
+    val array = Array[Int](1, 2, 3)
+    println(s"Sum = ${array.toList.sum}")
+
+    val bob = Array[Int](2, 1, 2)
+
+//    List[Int](1, 2, 3)
+
+    val temp: Array[(Int, Int)] = array.zip(bob)
+    val temp_1: Array[(Int, Int)] = temp.map{ x =>
+      if(x._1 > x._2) {
+        (1, 0)
+      } else if(x._1 < x._2) {
+        (0, 1)
+      } else {
+        (0, 0)
+      }
+    }
+
+    val t: (Int, Int) = temp_1.unzip match {
+      case (a, b) => (a.sum, b.sum)
+    }
+
+    val tt = t.productIterator.toArray
+    tt.map(println)
+
     println("==================== anagrams https://www.hackerrank.com/challenges/sherlock-and-anagrams/problem  ==============================")
     println("abba => 4, abcd => 0, ifailuhkqq => 3, kkkk => 10, cdcd => 5")
 
