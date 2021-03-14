@@ -20,8 +20,9 @@ object specialString {
     val cs  = s.toCharArray
     val len = s.length
     val single = cs
-      .foldLeft(List((Char.MinValue, 0))) { case ((c, s) :: rest, i) =>
-        if (c == i) (c, s + 1) :: rest else (i, 1) :: (c, s) :: rest
+      .foldLeft(List((Char.MinValue, 0))) {
+        case ((c, s) :: rest, i) => if (c == i) (c, s + 1) :: rest else (i, 1) :: (c, s) :: rest
+        case _ => List((Char.MinValue, 0))//I added this line
       }
       .map(x => (x._2 - 1) * x._2 / 2)
       .sum
@@ -35,7 +36,7 @@ object specialString {
       .zipWithIndex
       .map { case (List(a, b, c), idx) => if (a == c && a != b) expand(idx, a, 0) else 0 }
       .sum
-    single + mvm + s.length
+    (single + mvm + s.length).toLong
   }
 
 }
